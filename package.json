@@ -1,0 +1,26 @@
+{
+  "name": "cooper-portfolio",
+  "version": "1.0.0",
+  "description": "Cooper Timmins - Junior Developer Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coopy1997/cooper-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "developer"
+  ],
+  "author": "Cooper Timmins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coopy1997/cooper-portfolio/issues"
+  },
+  "homepage": "https://github.com/Coopy1997/cooper-portfolio#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
