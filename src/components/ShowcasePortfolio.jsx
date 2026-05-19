@@ -21,12 +21,12 @@ import ThreeShowcase from './ThreeShowcase';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const links = {
-  email: 'mailto:Coopyy@live.com',
+  email: 'mailto:CooperTimmins1@gmail.com',
   phone: 'tel:+610435744450',
   whatsapp: 'https://wa.me/48664466743',
   github: 'https://github.com/Coopy1997',
   credly: 'https://www.credly.com/users/cooper-timmins/badges',
-  resume: `${basePath}/CooperTimminsResume.pdf`,
+  resume: `${basePath}/Cooper_Timmins_Resume_Final.pdf`,
 };
 
 const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 'Contact'];
@@ -505,7 +505,7 @@ export default function ShowcasePortfolio() {
               <h2 className="mt-5 text-6xl font-black uppercase leading-[0.82] tracking-[-0.08em] md:text-9xl">Contact</h2>
             </div>
             <div className="grid gap-3">
-              <ContactLink href={links.email} icon={Mail} label="Email: Coopyy@live.com" />
+              <ContactLink href={links.email} icon={Mail} label="Email: CooperTimmins1@gmail.com" />
               <ContactLink href={links.phone} icon={BadgeCheck} label="Phone: +61 0435744450" />
               <ContactLink href={links.whatsapp} icon={MessageCircle} label="WhatsApp: +48 664466743" external />
               <ContactLink href={links.github} icon={Github} label="GitHub: github.com/Coopy1997" external />

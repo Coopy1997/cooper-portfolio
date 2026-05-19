@@ -9,7 +9,7 @@ export default function Contact() {
           <h2>Contact</h2>
         </div>
         <div className="contact-details">
-          <a href={links.email}>Email: Coopyy@live.com</a>
+          <a href={links.email}>Email: CooperTimmins1@gmail.com</a>
           <a href={links.phone}>Phone: +61 0435744450</a>
           <a href={links.whatsapp} target="_blank" rel="noopener noreferrer">
             WhatsApp: +48 664466743
