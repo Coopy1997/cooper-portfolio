@@ -24,10 +24,11 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at var(--mx, 70%) var(--my, 22%), rgba(255, 75, 19, 0.28), transparent 24rem),
-    radial-gradient(circle at 20% 10%, rgba(143, 92, 255, 0.13), transparent 22rem),
-    radial-gradient(ellipse at 50% 0%, rgba(101, 63, 38, 0.84), transparent 56rem),
+    radial-gradient(circle at var(--mx, 70%) var(--my, 22%), rgba(255, 75, 19, 0.24), transparent 28rem),
+    radial-gradient(circle at 20% 10%, rgba(143, 92, 255, 0.12), transparent 26rem),
+    linear-gradient(180deg, rgba(101, 63, 38, 0.72), rgba(7, 3, 0, 0.94) 42rem, rgba(7, 3, 0, 1)),
     #070300;
+  background-attachment: fixed;
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -62,6 +63,31 @@ body::after {
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
   pointer-events: none;
+}
+
+.three-showcase {
+  position: fixed;
+  inset: -10vh -10vw;
+  z-index: 1;
+  opacity: 0.78;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  transform: translate3d(24vw, 0, 0) scale(0.96);
+  transform-origin: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  contain: layout paint size;
+}
+
+.three-showcase-grid {
+  opacity: 0.72;
+  transform: translate3d(12vw, 8vh, 0) scale(1.08);
+}
+
+.three-showcase canvas {
+  filter: saturate(1.35) contrast(1.08);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 ::selection {
@@ -131,6 +157,7 @@ body::after {
     rgba(0, 0, 0, 0.38);
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(22px);
+  transform-style: preserve-3d;
 }
 
 .noise-panel::before {
@@ -175,26 +202,54 @@ body::after {
   position: relative;
   display: grid;
   gap: 1rem;
+  z-index: 2;
+}
+
+header,
+section,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 3, 0, 0.88), rgba(7, 3, 0, 0.22) 34%, rgba(7, 3, 0, 0.55)),
+    linear-gradient(180deg, rgba(7, 3, 0, 0.12), rgba(7, 3, 0, 0.72));
 }
 
 .hero-stack-card {
-  min-height: 136px;
+  min-height: 156px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: visible;
 }
 
-.hero-card-front {
+.hero-card-frontend {
   transform: rotate(-3deg);
 }
 
-.hero-card-back {
+.hero-card-backend {
   z-index: 10;
-  min-height: 144px;
   transform: rotate(2deg);
 }
 
-.hero-card-cloud {
+.hero-card-data {
   z-index: 20;
   transform: rotate(-2deg);
+}
+
+.proof-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
 }
 
 @media (min-width: 768px) {
@@ -207,21 +262,21 @@ body::after {
     position: absolute;
   }
 
-  .hero-card-front {
+  .hero-card-frontend {
     top: 24px;
     left: 2.5rem;
     right: 0.5rem;
     transform: rotate(-5deg);
   }
 
-  .hero-card-back {
+  .hero-card-backend {
     top: 245px;
     left: 0.5rem;
     right: 3.5rem;
     transform: rotate(4deg);
   }
 
-  .hero-card-cloud {
+  .hero-card-data {
     top: 445px;
     left: 7rem;
     right: 0;
@@ -231,5 +286,25 @@ body::after {
 @media (min-width: 1024px) {
   .hero-stack {
     min-height: 590px;
+  }
+}
+
+.gsap-card {
+  will-change: transform, opacity;
+}
+
+.gsap-split {
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+  .three-showcase {
+    opacity: 0.34;
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+
+  .three-showcase-grid {
+    opacity: 0.28;
+    transform: translate3d(0, 6vh, 0) scale(1.04);
   }
 }

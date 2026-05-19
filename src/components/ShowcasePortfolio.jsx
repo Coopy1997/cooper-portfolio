@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo } from 'react';
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -14,6 +16,7 @@ import {
   ShieldCheck,
   Wrench,
 } from 'lucide-react';
+import ThreeShowcase from './ThreeShowcase';
 
 const links = {
   email: 'mailto:Coopyy@live.com',
@@ -28,23 +31,23 @@ const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 
 
 const proof = [
   ['01', 'Frontend', 'React interfaces, responsive layouts, forms, and animated UI states.'],
-  ['02', 'Backend', 'Node.js, C#, .NET, routing, validation, authentication, and SQL-backed features.'],
-  ['03', 'Cloud', 'Azure, Vercel, Blob Storage, environment variables, production fixes, and deployment flow.'],
+  ['02', 'Backend', 'C#, .NET, Node.js, routing, validation, authentication, and server-side application logic.'],
+  ['03', 'Data', 'SQL schemas, joins, reporting queries, relationships, data integrity, and cloud-connected storage.'],
 ];
 
 const skillCards = [
-  ['FRONT', 'Responsive interfaces with HTML, CSS, JavaScript, and React', Code2],
-  ['BACK', 'Server-side logic with Node.js, C#, .NET, routing, and validation', Wrench],
+  ['FRONT', 'React, JavaScript, TypeScript, responsive UI, forms, state, accessibility, and polished browser interactions', Code2],
+  ['BACK', 'Backend development with C#, .NET, Node.js, routing, validation, and application logic', Wrench],
+  ['LANG', 'C++, C#, Python, Java, JavaScript, and TypeScript foundations', Code2],
   ['DATA', 'SQL schemas, joins, reporting queries, relationships, and data integrity', Database],
   ['AUTH', 'Login flows, protected access, user records, and secure handling', ShieldCheck],
   ['CLOUD', 'Azure, Vercel, storage, configuration, and deployment troubleshooting', Cloud],
-  ['GIT', 'Repository organisation, commits, READMEs, and project presentation', Github],
 ];
 
 const projects = [
   {
     number: '001',
-    title: 'OnlineReader',
+    title: 'Cloud Book Reader',
     copy: 'Cloud-based reading platform for PDF and EPUB files with login, storage, and progress features.',
     tags: ['React', 'Node.js', 'Azure SQL', 'Blob Storage'],
     href: 'https://github.com/Coopy1997/online-reader-app',
@@ -69,14 +72,14 @@ const projects = [
   },
   {
     number: '005',
-    title: 'Fish Game',
+    title: 'Fishtank Simulator',
     copy: 'Unity and C# game project demonstrating movement, collision detection, scoring, and gameplay state.',
     tags: ['Unity', 'C#', 'Gameplay Logic'],
     href: 'https://github.com/Coopy1997/fish-game-unity',
   },
 ];
 
-const stack = ['JavaScript', 'React', 'HTML5', 'CSS3', 'Node.js', 'C#', '.NET', 'SQL Server', 'Azure', 'GitHub'];
+const stack = ['C++', 'C#', 'Python', 'Java', 'JavaScript', 'TypeScript', 'Node.js', '.NET', 'SQL Server', 'Azure'];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 46 },
@@ -127,9 +130,62 @@ export default function ShowcasePortfolio() {
     return () => window.removeEventListener('pointermove', onMove);
   }, [mouseX, mouseY]);
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const context = gsap.context(() => {
+      gsap.to('.gsap-hero-title', {
+        yPercent: -14,
+        scale: 0.94,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#home',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      });
+
+      gsap.utils.toArray('.gsap-card').forEach((card, index) => {
+        gsap.fromTo(
+          card,
+          { y: 90, rotate: index % 2 ? 3 : -3, opacity: 0.3 },
+          {
+            y: 0,
+            rotate: 0,
+            opacity: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              end: 'top 42%',
+              scrub: 0.8,
+            },
+          },
+        );
+      });
+
+      gsap.utils.toArray('.gsap-split').forEach((section, index) => {
+        gsap.to(section, {
+          xPercent: index % 2 ? -4 : 4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      });
+    });
+
+    return () => context.revert();
+  }, []);
+
   return (
     <main className="relative min-h-screen overflow-hidden">
       <motion.div className="fixed left-0 top-0 z-50 h-1 origin-left bg-[#ff4b13]" style={{ scaleX: progress }} />
+      <ThreeShowcase />
 
       <header className="sticky top-0 z-40 border-b border-white/15 bg-[#070300]/70 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-8">
@@ -154,7 +210,7 @@ export default function ShowcasePortfolio() {
 
       <section id="home" className="mx-auto min-h-[calc(100vh-86px)] max-w-7xl px-4 py-10 md:px-8">
         <div className="grid items-center gap-10 border-t border-white/15 pt-5 lg:grid-cols-[0.95fr_0.7fr]">
-          <motion.div style={{ y: heroY, rotate: heroRotate }} className="relative z-10">
+          <motion.div style={{ y: heroY, rotate: heroRotate }} className="gsap-hero-title relative z-10">
             <div className="mb-8 flex justify-between gap-5 font-mono text-xs font-black uppercase tracking-[0.24em] text-[#ffb08a]">
               <span>Junior Developer</span>
               <span>Gold Coast, Australia</span>
@@ -194,7 +250,7 @@ export default function ShowcasePortfolio() {
             <div className="orbital inset-10 hidden md:block" />
             <div className="orbital inset-24 hidden rotate-45 md:block" />
             <motion.div
-              className="hero-stack-card hero-card-front rounded-lg noise-panel scan-hover p-5"
+              className="hero-stack-card hero-card-frontend rounded-lg noise-panel scan-hover p-5"
               whileHover={{ rotate: -11, scale: 1.03 }}
             >
               <span className="font-mono text-xs font-black text-[#ffb08a]">01</span>
@@ -204,23 +260,23 @@ export default function ShowcasePortfolio() {
               </code>
             </motion.div>
             <motion.div
-              className="hero-stack-card hero-card-back rounded-lg border-[#ff4b13]/60 bg-[#a82b00]/55 noise-panel scan-hover p-5"
+              className="hero-stack-card hero-card-backend rounded-lg border-[#ff4b13]/60 bg-[#a82b00]/55 noise-panel scan-hover p-5"
               whileHover={{ rotate: 11, scale: 1.04 }}
             >
               <span className="font-mono text-xs font-black text-[#ffb08a]">02</span>
               <strong className="mt-4 block text-5xl font-black uppercase tracking-[-0.08em]">Backend</strong>
               <code className="mt-3 block font-mono text-xs font-black uppercase tracking-[0.2em] text-[#c9b89f]">
-                Node / SQL / .NET
+                C# / .NET / Node
               </code>
             </motion.div>
             <motion.div
-              className="hero-stack-card hero-card-cloud rounded-lg noise-panel scan-hover p-5"
+              className="hero-stack-card hero-card-data rounded-lg noise-panel scan-hover p-5"
               whileHover={{ rotate: -6, scale: 1.03 }}
             >
               <span className="font-mono text-xs font-black text-[#ffb08a]">03</span>
-              <strong className="mt-4 block text-5xl font-black uppercase tracking-[-0.08em]">Cloud</strong>
+              <strong className="mt-4 block text-5xl font-black uppercase tracking-[-0.08em]">Data</strong>
               <code className="mt-3 block font-mono text-xs font-black uppercase tracking-[0.2em] text-[#c9b89f]">
-                Azure / Vercel / GitHub
+                SQL / Azure / Storage
               </code>
             </motion.div>
           </motion.div>
@@ -234,7 +290,7 @@ export default function ShowcasePortfolio() {
         >
           {proof.map(([number, title, copy]) => (
             <motion.div
-              className="noise-panel scan-hover min-h-36 rounded-none p-5"
+              className="proof-card noise-panel scan-hover min-h-36 rounded-none p-5"
               variants={fadeUp}
               whileHover={{ y: -8, rotate: -0.5 }}
               key={title}
@@ -247,34 +303,24 @@ export default function ShowcasePortfolio() {
         </motion.div>
       </section>
 
-      <section className="-my-4 rotate-[-1.8deg] overflow-hidden bg-[#fff3df] py-3 text-[#070300]">
-        <div className="flex w-max gap-10 whitespace-nowrap [animation:marquee_26s_linear_infinite]">
-          {marquee.map((item, index) => (
-            <span className="text-5xl font-black uppercase tracking-[-0.08em] md:text-8xl" key={`${item}-${index}`}>
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <section id="about" className="mx-auto max-w-7xl px-4 py-24 md:px-8">
+      <section id="about" className="gsap-split mx-auto max-w-7xl px-4 py-24 md:px-8">
         <SectionTitle index="01 / About" title="About Me" />
         <motion.div className="grid gap-5 lg:grid-cols-[1fr_390px]" initial="hidden" whileInView="show" viewport={{ once: true }}>
-          <motion.div className="noise-panel rounded-lg p-7 text-lg leading-relaxed text-[#c9b89f]" variants={fadeUp}>
+          <motion.div className="gsap-card noise-panel rounded-lg p-7 text-lg leading-relaxed text-[#c9b89f]" variants={fadeUp}>
             <p>
               I am a junior developer and final-year Computer Science student with practical development experience
               across marketplace features, full-stack web applications, SQL databases, Azure deployment, and Cloud
               Technologies and DevOps.
             </p>
             <p className="mt-5">
-              Gold Coast, Australia. I focus on building clean interfaces, useful backend features, and project work
-              that can actually be deployed, tested, and explained.
+              Gold Coast, Australia. I focus on backend development, SQL-backed systems, cloud deployment, and software
+              projects that can actually be deployed, tested, and explained.
             </p>
           </motion.div>
           <motion.div className="grid gap-px overflow-hidden rounded-lg border border-white/15 bg-white/15" variants={fadeUp}>
             {[
               ['10+', 'Projects completed'],
-              ['Cloud', 'Azure and Vercel deployment'],
+              ['Cloud', 'Deployment, storage, environment configuration, and production troubleshooting'],
               ['Full', 'Frontend and backend project work'],
             ].map(([big, small]) => (
               <div className="noise-panel rounded-none p-6" key={big}>
@@ -291,7 +337,7 @@ export default function ShowcasePortfolio() {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-6">
           {skillCards.map(([code, title, Icon], index) => (
             <motion.article
-              className={`noise-panel scan-hover min-h-48 rounded-lg p-5 ${
+              className={`gsap-card noise-panel scan-hover min-h-48 rounded-lg p-5 ${
                 index % 3 === 0 ? 'md:col-span-3' : 'md:col-span-2'
               }`}
               initial={{ opacity: 0, y: 45, rotate: index % 2 ? 2 : -2 }}
@@ -311,7 +357,7 @@ export default function ShowcasePortfolio() {
         </div>
       </section>
 
-      <section id="experience" className="mx-auto max-w-7xl px-4 py-24 md:px-8">
+      <section id="experience" className="gsap-split mx-auto max-w-7xl px-4 py-24 md:px-8">
         <SectionTitle index="03 / Experience" title="Experience" />
         <div className="grid gap-4">
           {[
@@ -337,7 +383,7 @@ export default function ShowcasePortfolio() {
             ],
           ].map(([title, meta, bullets], index) => (
             <motion.article
-              className="noise-panel scan-hover grid gap-6 rounded-lg p-6 md:grid-cols-[300px_1fr]"
+              className="gsap-card noise-panel scan-hover grid gap-6 rounded-lg p-6 md:grid-cols-[300px_1fr]"
               initial={{ opacity: 0, x: index % 2 ? 70 : -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -367,7 +413,7 @@ export default function ShowcasePortfolio() {
         <div className="grid gap-4">
           {projects.map((project, index) => (
             <motion.article
-              className="noise-panel scan-hover grid min-h-56 gap-6 rounded-lg p-6 md:grid-cols-[110px_1fr_310px]"
+              className="gsap-card noise-panel scan-hover grid min-h-56 gap-6 rounded-lg p-6 md:grid-cols-[110px_1fr_310px]"
               initial={{ opacity: 0, rotate: index % 2 ? 2 : -2, y: 50 }}
               whileInView={{ opacity: 1, rotate: 0, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
@@ -402,12 +448,12 @@ export default function ShowcasePortfolio() {
         </div>
       </section>
 
-      <section id="stack" className="mx-auto max-w-7xl px-4 py-24 md:px-8">
+      <section id="stack" className="gsap-split mx-auto max-w-7xl px-4 py-24 md:px-8">
         <SectionTitle index="05 / Stack" title="Technical Stack" />
         <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
           {stack.map((item, index) => (
             <motion.div
-              className="noise-panel grid min-h-32 place-items-center rounded-lg p-4 text-center text-sm font-black uppercase tracking-[0.12em] text-[#c9b89f]"
+              className="gsap-card noise-panel grid min-h-32 place-items-center rounded-lg p-4 text-center text-sm font-black uppercase tracking-[0.12em] text-[#c9b89f]"
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: index % 2 ? 24 : 0 }}
               whileHover={{ y: -10, color: '#fff8ee' }}
@@ -424,7 +470,7 @@ export default function ShowcasePortfolio() {
       <section id="education" className="mx-auto max-w-7xl px-4 py-24 md:px-8">
         <SectionTitle index="06 / Education" title="Education" />
         <div className="grid gap-4 md:grid-cols-2">
-          <motion.article className="noise-panel scan-hover rounded-lg p-6" {...fadeInProps(0)}>
+          <motion.article className="gsap-card noise-panel scan-hover rounded-lg p-6" {...fadeInProps(0)}>
             <span className="font-mono text-sm font-black text-[#ffb08a]">BSc</span>
             <h3 className="mt-8 text-4xl font-black uppercase tracking-[-0.07em]">BSc Computer Science</h3>
             <p className="mt-5 text-[#c9b89f]">
@@ -432,7 +478,7 @@ export default function ShowcasePortfolio() {
               Completed specialisation in Cloud Technologies and DevOps.
             </p>
           </motion.article>
-          <motion.article className="noise-panel scan-hover rounded-lg p-6" {...fadeInProps(0.12)}>
+          <motion.article className="gsap-card noise-panel scan-hover rounded-lg p-6" {...fadeInProps(0.12)}>
             <span className="font-mono text-sm font-black text-[#ffb08a]">CERT</span>
             <h3 className="mt-8 text-4xl font-black uppercase tracking-[-0.07em]">Certifications & Badges</h3>
             <p className="mt-5 text-[#c9b89f]">Verified digital badges and certifications are available through Credly.</p>
