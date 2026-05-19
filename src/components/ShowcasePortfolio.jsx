@@ -18,13 +18,15 @@ import {
 } from 'lucide-react';
 import ThreeShowcase from './ThreeShowcase';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const links = {
   email: 'mailto:Coopyy@live.com',
   phone: 'tel:+610435744450',
   whatsapp: 'https://wa.me/48664466743',
   github: 'https://github.com/Coopy1997',
   credly: 'https://www.credly.com/users/cooper-timmins/badges',
-  resume: '/CooperTimminsResume.pdf',
+  resume: `${basePath}/CooperTimminsResume.pdf`,
 };
 
 const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 'Contact'];
