@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #070300;
+  --paper: #fff3df;
+  --ink: #fff8ee;
+  --muted: #c9b89f;
+  --orange: #ff4b13;
+  --rust: #a82b00;
+  --acid: #d9ff38;
+  --violet: #8f5cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at var(--mx, 70%) var(--my, 22%), rgba(255, 75, 19, 0.28), transparent 24rem),
+    radial-gradient(circle at 20% 10%, rgba(143, 92, 255, 0.13), transparent 22rem),
+    radial-gradient(ellipse at 50% 0%, rgba(101, 63, 38, 0.84), transparent 56rem),
+    #070300;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(255, 248, 238, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 248, 238, 0.13) 1px, transparent 1px),
+    url("data:image/gif;base64,R0lGODlhAgACAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAACAAIAAAIDlCAFADs=");
+  background-size: 46px 46px, 46px 46px, 2px 2px;
+  mask-image: radial-gradient(circle at center, black, transparent 78%);
+  animation: grid-drift 20s linear infinite;
+}
+
+body::after {
+  content: "COOPER";
+  position: fixed;
+  right: -0.22em;
+  top: 50%;
+  z-index: -1;
+  color: rgba(255, 248, 238, 0.04);
+  font-size: min(24vw, 330px);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--acid);
+  color: #090500;
+}
+
+@keyframes grid-drift {
+  to {
+    background-position: 46px 46px, 46px 46px, 8px 8px;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes float-a {
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(-1.5deg);
+  }
+}
+
+@keyframes float-b {
+  50% {
+    transform: translate3d(0, 16px, 0) rotate(1.25deg);
+  }
+}
+
+@keyframes scan {
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.noise-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 248, 238, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 248, 238, 0.12), rgba(255, 248, 238, 0.02)),
+    rgba(0, 0, 0, 0.38);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px);
+}
+
+.noise-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image: url("data:image/gif;base64,R0lGODlhAgACAJEAAAAAAP///////wAAACH5BAEAAAIALAAAAAACAAIAAAIDlCAFADs=");
+  background-size: 2px 2px;
+}
+
+.scan-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0 42%, rgba(255, 248, 238, 0.24) 50%, transparent 58%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.scan-hover:hover::after {
+  animation: scan 650ms ease forwards;
+}
+
+.orbital {
+  position: absolute;
+  border: 1px dashed rgba(255, 248, 238, 0.22);
+  border-radius: 999px;
+  animation: spin-slow 22s linear infinite;
+}
+
+.tilt-left {
+  animation: float-a 7s ease-in-out infinite;
+}
+
+.tilt-right {
+  animation: float-b 8s ease-in-out infinite;
+}
+
+.hero-stack {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-stack-card {
+  min-height: 136px;
+  position: relative;
+}
+
+.hero-card-front {
+  transform: rotate(-3deg);
+}
+
+.hero-card-back {
+  z-index: 10;
+  min-height: 144px;
+  transform: rotate(2deg);
+}
+
+.hero-card-cloud {
+  z-index: 20;
+  transform: rotate(-2deg);
+}
+
+@media (min-width: 768px) {
+  .hero-stack {
+    display: block;
+    min-height: 620px;
+  }
+
+  .hero-stack-card {
+    position: absolute;
+  }
+
+  .hero-card-front {
+    top: 24px;
+    left: 2.5rem;
+    right: 0.5rem;
+    transform: rotate(-5deg);
+  }
+
+  .hero-card-back {
+    top: 245px;
+    left: 0.5rem;
+    right: 3.5rem;
+    transform: rotate(4deg);
+  }
+
+  .hero-card-cloud {
+    top: 445px;
+    left: 7rem;
+    right: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-stack {
+    min-height: 590px;
+  }
+}
