@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[38099,["/cooper-portfolio/_next/static/chunks/0dbhjjzl8qfwv.js","/cooper-portfolio/_next/static/chunks/0qdhjecau7g0v.js"],"default"]
-3:I[97367,["/cooper-portfolio/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/cooper-portfolio/_next/static/chunks/0qdhjecau7g0v.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Jb1j5o4gEE-2HRges-8kV"}
-5:null
