@@ -167,17 +167,21 @@ export default function ShowcasePortfolio() {
         );
       });
 
-      gsap.utils.toArray('.gsap-split').forEach((section, index) => {
-        gsap.to(section, {
-          xPercent: index % 2 ? -4 : 4,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
+      ScrollTrigger.matchMedia({
+        '(min-width: 768px)': () => {
+          gsap.utils.toArray('.gsap-split').forEach((section, index) => {
+            gsap.to(section, {
+              xPercent: index % 2 ? -4 : 4,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+              },
+            });
+          });
+        },
       });
     });
 
@@ -385,7 +389,7 @@ export default function ShowcasePortfolio() {
             ],
           ].map(([title, meta, bullets], index) => (
             <motion.article
-              className="gsap-card noise-panel scan-hover grid gap-6 rounded-lg p-6 md:grid-cols-[300px_1fr]"
+              className="gsap-card noise-panel scan-hover grid min-w-0 gap-6 overflow-hidden rounded-lg p-5 sm:p-6 md:grid-cols-[300px_1fr]"
               initial={{ opacity: 0, x: index % 2 ? 70 : -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -393,15 +397,15 @@ export default function ShowcasePortfolio() {
               whileHover={{ scale: 1.015 }}
               key={title}
             >
-              <div>
-                <h3 className="text-3xl font-black uppercase tracking-[-0.06em]">{title}</h3>
-                <p className="mt-2 text-sm font-bold text-[#c9b89f]">{meta}</p>
+              <div className="min-w-0">
+                <h3 className="[overflow-wrap:anywhere] text-3xl font-black uppercase tracking-[-0.06em]">{title}</h3>
+                <p className="mt-2 [overflow-wrap:anywhere] text-sm font-bold text-[#c9b89f]">{meta}</p>
               </div>
-              <ul className="space-y-2 text-[#c9b89f]">
+              <ul className="min-w-0 space-y-2 text-[#c9b89f]">
                 {bullets.map((bullet) => (
-                  <li className="flex gap-3" key={bullet}>
+                  <li className="flex min-w-0 gap-3" key={bullet}>
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff4b13]" />
-                    {bullet}
+                    <span className="min-w-0 [overflow-wrap:anywhere]">{bullet}</span>
                   </li>
                 ))}
               </ul>
