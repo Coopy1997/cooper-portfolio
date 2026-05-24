@@ -390,8 +390,8 @@ export default function ShowcasePortfolio() {
           ].map(([title, meta, bullets], index) => (
             <motion.article
               className="gsap-card noise-panel scan-hover grid min-w-0 gap-6 overflow-hidden rounded-lg p-5 sm:p-6 md:grid-cols-[300px_1fr]"
-              initial={{ opacity: 0, x: index % 2 ? 70 : -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 45 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.75 }}
               whileHover={{ scale: 1.015 }}
