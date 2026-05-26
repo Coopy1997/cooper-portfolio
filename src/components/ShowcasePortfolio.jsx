@@ -314,13 +314,13 @@ export default function ShowcasePortfolio() {
         <motion.div className="grid gap-5 lg:grid-cols-[1fr_390px]" initial="hidden" whileInView="show" viewport={{ once: true }}>
           <motion.div className="gsap-card noise-panel rounded-lg p-7 text-lg leading-relaxed text-[#c9b89f]" variants={fadeUp}>
             <p>
-              I am a junior developer and final-year Computer Science student with practical development experience
-              across marketplace features, full-stack web applications, SQL databases, Azure deployment, and Cloud
-              Technologies and DevOps.
+              I am a full-stack junior developer and final-year Computer Science student who builds practical,
+              deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
+              DevOps workflows, and cybersecurity-aware development.
             </p>
             <p className="mt-5">
-              Gold Coast, Australia. I focus on backend development, SQL-backed systems, cloud deployment, and software
-              projects that can actually be deployed, tested, and explained.
+              Based on the Gold Coast, Australia, I turn ideas into tested web applications that look polished, run
+              reliably, protect user data, and can be clearly explained from UI to database to cloud infrastructure.
             </p>
           </motion.div>
           <motion.div className="grid gap-px overflow-hidden rounded-lg border border-white/15 bg-white/15" variants={fadeUp}>

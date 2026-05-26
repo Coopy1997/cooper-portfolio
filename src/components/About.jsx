@@ -7,13 +7,13 @@ export default function About() {
       <div className="about-layout">
         <div className="text-panel">
           <p>
-            I am a junior developer and final-year Computer Science student with practical development experience
-            across production marketplace features, full-stack web applications, SQL databases, Azure deployment, and
-            Cloud Technologies and DevOps.
+            I am a full-stack junior developer and final-year Computer Science student who builds practical,
+            deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
+            DevOps workflows, and cybersecurity-aware development.
           </p>
           <p>
-            Gold Coast, Australia. I am focused on growing in web development, backend systems, cloud deployment, and
-            clean project delivery.
+            Based on the Gold Coast, Australia, I turn ideas into tested web applications that look polished, run
+            reliably, protect user data, and can be clearly explained from UI to database to cloud infrastructure.
           </p>
         </div>
         <div className="stats">

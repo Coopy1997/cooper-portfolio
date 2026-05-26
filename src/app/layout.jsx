@@ -1,9 +1,9 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Cooper Timmins | Junior Developer',
+  title: 'Cooper Timmins | Full-Stack Junior Developer',
   description:
-    'Cooper Timmins portfolio: junior developer with React, Node.js, .NET, SQL, Azure, Vercel, GitHub, and cloud deployment experience.',
+    'Cooper Timmins portfolio: full-stack junior developer with frontend, backend, SQL, Azure, DevOps, cybersecurity, and cloud deployment experience.',
 };
 
 export default function RootLayout({ children }) {
