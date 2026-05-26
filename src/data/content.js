@@ -44,9 +44,9 @@ export const heroActions = [
 ];
 
 export const skills = [
-  { code: 'FRONT', title: 'Responsive interfaces built with HTML, CSS, JavaScript, and React', icon: Sparkles },
-  { code: 'BACK', title: 'Server-side logic with Node.js, C#, .NET, routing, and validation', icon: Server },
-  { code: 'DATA', title: 'SQL schema design, joins, reporting queries, and data integrity', icon: Database },
+  { code: 'FRONT', title: 'Responsive interfaces with HTML5, CSS3, JavaScript, TypeScript, React, forms, state, and polished UI flows', icon: Sparkles },
+  { code: 'BACK', title: 'Server-side logic with C#, .NET, Node.js, JavaScript, TypeScript, Java, Python, C++, routing, validation, and authentication', icon: Server },
+  { code: 'DATA', title: 'SQL Server, T-SQL, schema design, joins, reporting queries, relationships, cloud storage, and data integrity', icon: Database },
   { code: 'AUTH', title: 'Login flows, protected access, user records, and secure handling', icon: ShieldCheck },
   { code: 'CLOUD', title: 'Azure, Vercel, storage, environment variables, and deployment fixes', icon: Cloud },
   { code: 'DEVOPS', title: 'Cloud Technologies and DevOps specialisation with practical deployment work', icon: Wrench },
@@ -95,14 +95,19 @@ export const projects = [
 ];
 
 export const techStack = [
-  'JavaScript',
   'HTML5',
   'CSS3',
+  'JavaScript',
+  'TypeScript',
   'React',
   'Node.js',
   'C#',
   '.NET',
+  'Java',
+  'Python',
+  'C++',
   'SQL Server',
+  'T-SQL',
   'Azure',
   'GitHub',
 ];

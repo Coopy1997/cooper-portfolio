@@ -32,16 +32,16 @@ const links = {
 const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 'Contact'];
 
 const proof = [
-  ['01', 'Frontend', 'React interfaces, responsive layouts, forms, and animated UI states.'],
-  ['02', 'Backend', 'C#, .NET, Node.js, routing, validation, authentication, and server-side application logic.'],
-  ['03', 'Data', 'SQL schemas, joins, reporting queries, relationships, data integrity, and cloud-connected storage.'],
+  ['01', 'Frontend', 'HTML5, CSS3, JavaScript, TypeScript, and React interfaces with responsive layouts, forms, and animated UI states.'],
+  ['02', 'Backend', 'C#, .NET, Node.js, JavaScript, TypeScript, Java, Python, and C++ foundations for APIs, routing, validation, authentication, and server-side logic.'],
+  ['03', 'Data', 'SQL Server, T-SQL, relational schemas, joins, reporting queries, relationships, data integrity, and cloud-connected storage.'],
 ];
 
 const skillCards = [
-  ['FRONT', 'React, JavaScript, TypeScript, responsive UI, forms, state, accessibility, and polished browser interactions', Code2],
-  ['BACK', 'Backend development with C#, .NET, Node.js, routing, validation, and application logic', Wrench],
-  ['LANG', 'C++, C#, Python, Java, JavaScript, and TypeScript foundations', Code2],
-  ['DATA', 'SQL schemas, joins, reporting queries, relationships, and data integrity', Database],
+  ['FRONT', 'Frontend development with HTML5, CSS3, JavaScript, TypeScript, React, responsive UI, forms, state, accessibility, and polished browser interactions', Code2],
+  ['BACK', 'Backend development with C#, .NET, Node.js, JavaScript, TypeScript, Java, Python, C++, routing, validation, authentication, and application logic', Wrench],
+  ['LANG', 'C++, C#, Python, Java, JavaScript, TypeScript, HTML5, CSS3, SQL, and T-SQL across web, backend, data, and software projects', Code2],
+  ['DATA', 'SQL Server, T-SQL, schemas, joins, reporting queries, relationships, database design, cloud storage, and data integrity', Database],
   ['AUTH', 'Login flows, protected access, user records, and secure handling', ShieldCheck],
   ['CLOUD', 'Azure, Vercel, storage, configuration, and deployment troubleshooting', Cloud],
 ];
@@ -81,7 +81,7 @@ const projects = [
   },
 ];
 
-const stack = ['C++', 'C#', 'Python', 'Java', 'JavaScript', 'TypeScript', 'Node.js', '.NET', 'SQL Server', 'Azure'];
+const stack = ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'C#', '.NET', 'Java', 'Python', 'C++', 'SQL Server', 'T-SQL', 'Azure'];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 46 },
