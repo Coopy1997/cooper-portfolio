@@ -7,6 +7,18 @@ export default function Experience() {
       <div className="experience-list">
         <article className="experience-item">
           <div>
+            <h3>Website Designer & Developer</h3>
+            <p className="meta">2025-Present</p>
+          </div>
+          <ul>
+            <li>Designed, developed, and delivered 10+ modern websites for businesses, startups, and private clients.</li>
+            <li>Built responsive frontend experiences using React, Tailwind CSS, JavaScript, and modern UI/UX principles.</li>
+            <li>Focused on performance, mobile responsiveness, clean interaction design, and conversion-focused layouts.</li>
+            <li>Worked directly with clients to create custom business websites, booking systems, portfolio platforms, and branded web experiences tailored to client goals.</li>
+          </ul>
+        </article>
+        <article className="experience-item">
+          <div>
             <h3>All Board Trader</h3>
             <p className="meta">Junior Developer | 2024-2026</p>
           </div>

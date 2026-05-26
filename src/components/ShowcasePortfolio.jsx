@@ -368,6 +368,16 @@ export default function ShowcasePortfolio() {
         <div className="grid gap-4">
           {[
             [
+              'Website Designer & Developer',
+              '2025-Present',
+              [
+                'Designed, developed, and delivered 10+ modern websites for businesses, startups, and private clients.',
+                'Built responsive frontend experiences using React, Tailwind CSS, JavaScript, and modern UI/UX principles.',
+                'Focused on performance, mobile responsiveness, clean interaction design, and conversion-focused layouts.',
+                'Worked directly with clients to create custom business websites, booking systems, portfolio platforms, and branded web experiences tailored to client goals.',
+              ],
+            ],
+            [
               'All Board Trader',
               'Junior Developer | 2024-2026',
               [
