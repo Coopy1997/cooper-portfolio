@@ -1,5 +1,20 @@
 export default function Marquee() {
-  const items = ['React', 'JavaScript', 'Azure', 'SQL', 'C#', '.NET', 'Cloud', 'GitHub', 'HTML', 'CSS'];
+  const items = [
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'JavaScript',
+    'TypeScript',
+    'Node.js',
+    'C#',
+    '.NET',
+    'SQL Server',
+    'Azure',
+    'Vercel',
+    'Cybersecurity',
+    'GitHub',
+    'REST APIs',
+  ];
   const row = [...items, ...items, ...items];
 
   return (

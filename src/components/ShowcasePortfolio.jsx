@@ -81,7 +81,38 @@ const projects = [
   },
 ];
 
-const stack = ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'C#', '.NET', 'Java', 'Python', 'C++', 'SQL Server', 'T-SQL', 'Azure'];
+const stack = [
+  'HTML5',
+  'CSS3',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Tailwind CSS',
+  'Framer Motion',
+  'Node.js',
+  'REST APIs',
+  'C#',
+  '.NET',
+  'ASP.NET Core',
+  'Entity Framework',
+  'Java',
+  'Python',
+  'C++',
+  'SQL Server',
+  'T-SQL',
+  'Database Design',
+  'Azure',
+  'Azure SQL',
+  'Blob Storage',
+  'Vercel',
+  'Git',
+  'GitHub',
+  'Postman',
+  'Authentication',
+  'Cybersecurity',
+  'OWASP Basics',
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 46 },
