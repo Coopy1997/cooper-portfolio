@@ -6,7 +6,7 @@ export default function Header({ activeSection }) {
       <div className="topbar-inner wrap">
         <a className="brand" href="#home">
           <strong>Cooper Timmins</strong>
-          <span>Junior Developer / Gold Coast</span>
+          <span>Developer / Gold Coast</span>
         </a>
         <nav className="nav" aria-label="Primary navigation">
           {navItems.map((item) => (

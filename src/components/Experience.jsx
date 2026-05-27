@@ -20,7 +20,7 @@ export default function Experience() {
         <article className="experience-item">
           <div>
             <h3>All Board Trader</h3>
-            <p className="meta">Junior Developer | 2024-2026</p>
+            <p className="meta">Developer | 2024-2026</p>
           </div>
           <ul>
             <li>Worked on a production marketplace application for buying and selling board sports equipment.</li>

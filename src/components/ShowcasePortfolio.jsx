@@ -228,7 +228,7 @@ export default function ShowcasePortfolio() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-8">
           <a href="#home" className="group w-fit">
             <strong className="block text-lg font-black uppercase leading-none tracking-[-0.04em]">Cooper Timmins</strong>
-            <span className="mt-1 block text-sm text-[#c9b89f]">Junior Developer / Gold Coast</span>
+            <span className="mt-1 block text-sm text-[#c9b89f]">Developer / Gold Coast</span>
             <span className="mt-2 block h-0.5 w-full origin-left scale-x-25 bg-[#ff4b13] transition group-hover:scale-x-100" />
           </a>
           <nav className="grid grid-cols-4 gap-2 text-center text-xs font-black text-[#c9b89f] md:flex md:text-sm">
@@ -249,7 +249,7 @@ export default function ShowcasePortfolio() {
         <div className="grid items-center gap-10 border-t border-white/15 pt-5 lg:grid-cols-[0.95fr_0.7fr]">
           <motion.div style={{ y: heroY, rotate: heroRotate }} className="gsap-hero-title relative z-10">
             <div className="mb-8 flex justify-between gap-5 font-mono text-xs font-black uppercase tracking-[0.24em] text-[#ffb08a]">
-              <span>Junior Developer</span>
+              <span>Developer</span>
               <span>Gold Coast, Australia</span>
             </div>
             <motion.h1
@@ -274,7 +274,7 @@ export default function ShowcasePortfolio() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.55 }}
             >
-              Junior Developer
+              Developer
             </motion.p>
           </motion.div>
 
@@ -345,7 +345,7 @@ export default function ShowcasePortfolio() {
         <motion.div className="grid gap-5 lg:grid-cols-[1fr_390px]" initial="hidden" whileInView="show" viewport={{ once: true }}>
           <motion.div className="gsap-card noise-panel rounded-lg p-7 text-lg leading-relaxed text-[#c9b89f]" variants={fadeUp}>
             <p>
-              I am a full-stack junior developer and final-year Computer Science student who builds practical,
+              I am a full-stack developer and final-year Computer Science student who builds practical,
               deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
               DevOps workflows, and cybersecurity-aware development.
             </p>
@@ -410,7 +410,7 @@ export default function ShowcasePortfolio() {
             ],
             [
               'All Board Trader',
-              'Junior Developer | 2024-2026',
+              'Developer | 2024-2026',
               [
                 'Worked on a production marketplace application for buying and selling board sports equipment.',
                 'Built user account and marketplace listing features across frontend, backend, and database layers.',

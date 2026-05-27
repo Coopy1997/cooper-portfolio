@@ -7,7 +7,7 @@ export default function About() {
       <div className="about-layout">
         <div className="text-panel">
           <p>
-            I am a full-stack junior developer and final-year Computer Science student who builds practical,
+            I am a full-stack developer and final-year Computer Science student who builds practical,
             deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
             DevOps workflows, and cybersecurity-aware development.
           </p>

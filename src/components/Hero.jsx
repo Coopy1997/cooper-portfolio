@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="hero wrap" id="home">
       <div className="hero-main">
         <div className="eyebrow">
-          <span>Junior Developer</span>
+          <span>Developer</span>
           <span>Gold Coast, Australia</span>
         </div>
         <div className="hero-title-row">
@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="hero-bottom">
         <div>
           <p className="intro">
-            <strong>Junior Developer</strong>
+            <strong>Developer</strong>
           </p>
           <div className="hero-proof-grid" aria-label="Portfolio highlights">
             <div>
