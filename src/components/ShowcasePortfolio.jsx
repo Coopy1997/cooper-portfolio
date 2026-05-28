@@ -345,13 +345,18 @@ export default function ShowcasePortfolio() {
         <motion.div className="grid gap-5 lg:grid-cols-[1fr_390px]" initial="hidden" whileInView="show" viewport={{ once: true }}>
           <motion.div className="gsap-card noise-panel rounded-lg p-7 text-lg leading-relaxed text-[#c9b89f]" variants={fadeUp}>
             <p>
-              I am a full-stack developer and final-year Computer Science student who builds practical,
-              deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
-              DevOps workflows, and cybersecurity-aware development.
+              I am a full-stack developer based on the Gold Coast, Australia, specialising in building polished frontend
+              interfaces and reliable backend systems.
             </p>
             <p className="mt-5">
-              Based on the Gold Coast, Australia, I turn ideas into tested web applications that look polished, run
-              reliably, protect user data, and can be clearly explained from UI to database to cloud infrastructure.
+              On the frontend, I create clean, responsive, user-friendly web applications that look professional and feel
+              smooth to use. On the backend, I build secure APIs, structure SQL databases, handle authentication, connect
+              services, and deploy applications using cloud and DevOps workflows.
+            </p>
+            <p className="mt-5">
+              My strength is connecting both sides of a project: turning a strong visual interface into a working product
+              backed by reliable logic, organised data, and secure infrastructure. I focus on building practical software
+              that is easy to use, easy to maintain, and ready for real-world deployment.
             </p>
           </motion.div>
           <motion.div className="grid gap-px overflow-hidden rounded-lg border border-white/15 bg-white/15" variants={fadeUp}>

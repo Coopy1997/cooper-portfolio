@@ -7,13 +7,18 @@ export default function About() {
       <div className="about-layout">
         <div className="text-panel">
           <p>
-            I am a full-stack developer and final-year Computer Science student who builds practical,
-            deployable software across frontend interfaces, backend APIs, SQL databases, Azure cloud deployment,
-            DevOps workflows, and cybersecurity-aware development.
+            I am a full-stack developer based on the Gold Coast, Australia, specialising in building polished frontend
+            interfaces and reliable backend systems.
           </p>
           <p>
-            Based on the Gold Coast, Australia, I turn ideas into tested web applications that look polished, run
-            reliably, protect user data, and can be clearly explained from UI to database to cloud infrastructure.
+            On the frontend, I create clean, responsive, user-friendly web applications that look professional and feel
+            smooth to use. On the backend, I build secure APIs, structure SQL databases, handle authentication, connect
+            services, and deploy applications using cloud and DevOps workflows.
+          </p>
+          <p>
+            My strength is connecting both sides of a project: turning a strong visual interface into a working product
+            backed by reliable logic, organised data, and secure infrastructure. I focus on building practical software
+            that is easy to use, easy to maintain, and ready for real-world deployment.
           </p>
         </div>
         <div className="stats">
