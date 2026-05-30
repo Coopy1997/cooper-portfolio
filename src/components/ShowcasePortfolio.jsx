@@ -85,6 +85,7 @@ const liveProjects = [
   {
     title: 'Hello Poland AI',
     url: 'https://hellopolandai.com/',
+    image: `${basePath}/images/hellopoland.webp`,
     description:
       'AI-powered immigration assistant for international students, workers, and families navigating Polish bureaucracy — Karta Pobytu, PESEL, NFZ, and beyond.',
     tags: ['AI', 'Next.js', 'Immigration', 'Vercel'],
@@ -92,6 +93,7 @@ const liveProjects = [
   {
     title: 'Pol Smash',
     url: 'https://polsmash.vercel.app/',
+    image: `${basePath}/images/polsmash.png`,
     description:
       'Home of the Polish Super Smash Bros Ultimate community — ELO and rating system for all players, tournament schedules and results, plus an interactive player map.',
     tags: ['Community', 'Ratings', 'Esports', 'Next.js', 'Vercel'],
@@ -99,6 +101,7 @@ const liveProjects = [
   {
     title: 'Polish With Wilczyńska',
     url: 'https://privatepolish.com/',
+    image: `${basePath}/images/polishwithw.webp`,
     description:
       'Private online Polish language school by Wiktoria Wilczyńska — free 30-minute trial lesson, multilingual booking flow (EN/RU/UK) and integrated payments.',
     tags: ['Web Design', 'Multilingual', 'Calendly', 'Booking'],
@@ -106,6 +109,7 @@ const liveProjects = [
   {
     title: 'Renueral Psy',
     url: 'https://renueralpsy.com/',
+    image: `${basePath}/images/renueralpsy.webp`,
     description:
       'Trauma-focused psychological care practice by Kylie Ringuet — clinically grounded therapy pathways (EMDR, somatic, psychedelic integration) with online booking and telehealth.',
     tags: ['Web Design', 'Healthcare', 'Booking'],
@@ -113,6 +117,7 @@ const liveProjects = [
   {
     title: 'Pools by Jex',
     url: 'https://poolsbyjex.com/',
+    image: `${basePath}/images/Poolsbyjex.webp`,
     description:
       'Owner-operated pool servicing business for the Northern Gold Coast — cleaning, water testing, equipment checks, green pool recovery, repairs, and ongoing care packages.',
     tags: ['Web Design', 'Local Business', 'Lead Gen'],
@@ -127,6 +132,7 @@ const liveProjects = [
   {
     title: 'Blackjack 3D',
     url: 'https://blackjack-eight-lyart.vercel.app/',
+    image: `${basePath}/images/blackjack3d.webp`,
     description:
       'Browser-based 3D blackjack game built with Three.js — animated card dealing, full hit / stand / double / split rules, live count tracking, and keyboard shortcuts.',
     tags: ['Three.js', 'WebGL', '3D', 'Game'],
@@ -218,7 +224,7 @@ function LiveProjectsCarousel({ items }) {
           {items.map((p, i) => (
             <motion.img
               key={p.url}
-              src={screenshotUrl(p.url)}
+              src={p.image ?? screenshotUrl(p.url)}
               alt={`${p.title} screenshot`}
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-top"
