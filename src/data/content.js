@@ -20,7 +20,7 @@ export const links = {
     'https://wa.me/48664466743?text=Hi%20Cooper%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect.',
   github: 'https://github.com/Coopy1997',
   credly: 'https://www.credly.com/users/cooper-timmins/badges',
-  resume: '/Cooper_Timmins_Resume_Final.pdf',
+  resume: '/Resume_CooperTimmins.docx',
 };
 
 export const navItems = [
