@@ -87,16 +87,16 @@ const liveProjects = [
     url: 'https://hellopolandai.com/',
     image: `${basePath}/images/hellopoland.webp`,
     description:
-      'Multilingual platform for an AI-powered Polish immigration assistant covering Karta Pobytu, PESEL and NFZ guidance. Built with Next.js, React and Tailwind CSS, with the assistant powered by OpenAI GPT-4 and deployed on Vercel.',
-    tags: ['Next.js', 'React', 'Tailwind', 'OpenAI', 'GPT-4', 'Vercel'],
+      'Multilingual platform for an AI-powered Polish immigration assistant covering Karta Pobytu, PESEL and NFZ guidance. Built with Next.js, React and Tailwind CSS, with the assistant powered by OpenAI GPT-4.',
+    tags: ['Next.js', 'React', 'Tailwind', 'OpenAI', 'GPT-4'],
   },
   {
     title: 'Pol Smash',
     url: 'https://polsmash.vercel.app/',
     image: `${basePath}/images/polsmash.png`,
     description:
-      'Community hub for the Polish Super Smash Bros Ultimate scene with an ELO and rating system, tournament schedules and results, and an interactive player map. Built with Next.js, React and Tailwind CSS on Vercel.',
-    tags: ['Next.js', 'React', 'Tailwind', 'Maps', 'Vercel'],
+      'Community hub for the Polish Super Smash Bros Ultimate scene with an ELO and rating system, tournament schedules and results, and an interactive player map. Built with Next.js, React and Tailwind CSS.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Maps'],
   },
   {
     title: 'Polish With Wilczyńska',
@@ -134,8 +134,8 @@ const liveProjects = [
     url: 'https://blackjack-eight-lyart.vercel.app/',
     image: `${basePath}/images/blackjack3d.webp`,
     description:
-      'Browser-based 3D blackjack game with animated card dealing, hit/stand/double/split rules, live count tracking and keyboard shortcuts. Built with Three.js for WebGL rendering and deployed on Vercel.',
-    tags: ['Three.js', 'WebGL', 'JavaScript', 'Vercel'],
+      'Browser-based 3D blackjack game with animated card dealing, hit/stand/double/split rules, live count tracking and keyboard shortcuts. Built with Three.js for WebGL rendering.',
+    tags: ['Three.js', 'WebGL', 'JavaScript'],
   },
 ];
 
@@ -396,10 +396,10 @@ export default function ShowcasePortfolio() {
             <span className="mt-1 block text-sm text-[#c9b89f]">Developer / Gold Coast</span>
             <span className="mt-2 block h-0.5 w-full origin-left scale-x-25 bg-[#ff4b13] transition group-hover:scale-x-100" />
           </a>
-          <nav className="grid grid-cols-4 gap-2 text-center text-xs font-black text-[#c9b89f] md:flex md:text-sm">
+          <nav className="grid grid-cols-3 gap-2 text-center text-xs font-black text-[#c9b89f] md:flex md:text-sm">
             {nav.map((item) => (
               <a
-                className="rounded-md border border-white/10 px-3 py-2 transition hover:border-[#ff4b13] hover:bg-[#ff4b13]/25 hover:text-white md:border-0"
+                className={`rounded-md border border-white/10 px-3 py-2 transition hover:border-[#ff4b13] hover:bg-[#ff4b13]/25 hover:text-white md:border-0 ${item === 'Stack' ? 'hidden md:inline-flex md:items-center md:justify-center' : ''}`}
                 href={`#${item.toLowerCase()}`}
                 key={item}
               >
