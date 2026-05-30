@@ -26,7 +26,7 @@ const links = {
   whatsapp: 'https://wa.me/48664466743',
   github: 'https://github.com/Coopy1997',
   credly: 'https://www.credly.com/users/cooper-timmins/badges',
-  resume: `${basePath}/Cooper_Timmins_Resume_Final.pdf`,
+  resume: `${basePath}/Resume_CooperTimmins.docx`,
 };
 
 const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 'Contact'];
