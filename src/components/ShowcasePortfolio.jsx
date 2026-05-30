@@ -87,55 +87,55 @@ const liveProjects = [
     url: 'https://hellopolandai.com/',
     image: `${basePath}/images/hellopoland.webp`,
     description:
-      'AI-powered immigration assistant for international students, workers, and families navigating Polish bureaucracy — Karta Pobytu, PESEL, NFZ, and beyond.',
-    tags: ['AI', 'Next.js', 'Immigration', 'Vercel'],
+      'Multilingual marketing site for an AI-powered Polish immigration assistant covering Karta Pobytu, PESEL and NFZ guidance. Built with Next.js, React, Tailwind CSS and animated dashboard previews.',
+    tags: ['Next.js', 'React', 'Tailwind', 'AI', 'Vercel'],
   },
   {
     title: 'Pol Smash',
     url: 'https://polsmash.vercel.app/',
     image: `${basePath}/images/polsmash.png`,
     description:
-      'Home of the Polish Super Smash Bros Ultimate community — ELO and rating system for all players, tournament schedules and results, plus an interactive player map.',
-    tags: ['Community', 'Ratings', 'Esports', 'Next.js', 'Vercel'],
+      'Community hub for the Polish Super Smash Bros Ultimate scene with an ELO and rating system, tournament schedules and results, and an interactive player map. Built with Next.js, React and Tailwind CSS on Vercel.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Maps', 'Vercel'],
   },
   {
     title: 'Polish With Wilczyńska',
     url: 'https://privatepolish.com/',
     image: `${basePath}/images/polishwithw.webp`,
     description:
-      'Private online Polish language school by Wiktoria Wilczyńska — free 30-minute trial lesson, multilingual booking flow (EN/RU/UK) and integrated payments.',
-    tags: ['Web Design', 'Multilingual', 'Calendly', 'Booking'],
+      'Marketing and booking site for a private online Polish language school with EN/RU/UK localisation, integrated Calendly scheduling and card, PayPal, Apple Pay, Google Pay and Blik payments. Built with Next.js and Tailwind CSS.',
+    tags: ['Next.js', 'Tailwind', 'Multilingual', 'Calendly', 'Payments'],
   },
   {
     title: 'Renueral Psy',
     url: 'https://renueralpsy.com/',
     image: `${basePath}/images/renueralpsy.webp`,
     description:
-      'Trauma-focused psychological care practice by Kylie Ringuet — clinically grounded therapy pathways (EMDR, somatic, psychedelic integration) with online booking and telehealth.',
-    tags: ['Web Design', 'Healthcare', 'Booking'],
+      'Trauma-focused psychology practice site presenting structured therapy pathways (EMDR, somatic, psychedelic integration), telehealth information and an online booking flow. Built with Next.js, Tailwind CSS and a custom typographic design system.',
+    tags: ['Next.js', 'Tailwind', 'Web Design', 'Booking'],
   },
   {
     title: 'Pools by Jex',
     url: 'https://poolsbyjex.com/',
     image: `${basePath}/images/Poolsbyjex.webp`,
     description:
-      'Owner-operated pool servicing business for the Northern Gold Coast — cleaning, water testing, equipment checks, green pool recovery, repairs, and ongoing care packages.',
-    tags: ['Web Design', 'Local Business', 'Lead Gen'],
+      'Marketing and lead-capture site for a Northern Gold Coast pool servicing business — services, packages and a direct phone CTA. Built with Next.js, React and Tailwind CSS.',
+    tags: ['Next.js', 'React', 'Tailwind', 'Lead Gen'],
   },
   {
     title: 'Commercial Catamaran',
     url: 'https://www.commercialcatamaran.com/',
     description:
-      'Marketing site for a commercial catamaran business — vessel specs, photography galleries, and direct inquiry contact flow.',
-    tags: ['Web Design', 'Business Site', 'Marine'],
+      'Marketing site for a commercial catamaran business showcasing vessel specs, photography galleries and an inquiry contact flow. Built with a modern React stack and responsive Tailwind layouts.',
+    tags: ['React', 'Tailwind', 'Responsive', 'Business Site'],
   },
   {
     title: 'Blackjack 3D',
     url: 'https://blackjack-eight-lyart.vercel.app/',
     image: `${basePath}/images/blackjack3d.webp`,
     description:
-      'Browser-based 3D blackjack game built with Three.js — animated card dealing, full hit / stand / double / split rules, live count tracking, and keyboard shortcuts.',
-    tags: ['Three.js', 'WebGL', '3D', 'Game'],
+      'Browser-based 3D blackjack game with animated card dealing, hit/stand/double/split rules, live count tracking and keyboard shortcuts. Built with Three.js for WebGL rendering and deployed on Vercel.',
+    tags: ['Three.js', 'WebGL', 'JavaScript', 'Vercel'],
   },
 ];
 
