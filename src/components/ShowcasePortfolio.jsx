@@ -86,15 +86,36 @@ const liveProjects = [
     title: 'Hello Poland AI',
     url: 'https://hellopolandai.com/',
     description:
-      'AI assistant for people relocating to or living in Poland — answers questions on visas, paperwork, daily life, and local services.',
-    tags: ['AI', 'Next.js', 'LLM', 'Vercel'],
+      'AI-powered immigration assistant for international students, workers, and families navigating Polish bureaucracy — Karta Pobytu, PESEL, NFZ, and beyond.',
+    tags: ['AI', 'Next.js', 'Immigration', 'Vercel'],
   },
   {
-    title: 'Blackjack 3D',
-    url: 'https://blackjack-eight-lyart.vercel.app/',
+    title: 'Pol Smash',
+    url: 'https://polsmash.vercel.app/',
     description:
-      'Browser-based 3D blackjack game built with Three.js — real-time card rendering, animated dealing, and an interactive table.',
-    tags: ['Three.js', 'WebGL', '3D', 'JavaScript'],
+      'Home of the Polish Super Smash Bros Ultimate community — ELO and rating system for all players, tournament schedules and results, plus an interactive player map.',
+    tags: ['Community', 'Ratings', 'Esports', 'Next.js', 'Vercel'],
+  },
+  {
+    title: 'Polish With Wilczyńska',
+    url: 'https://privatepolish.com/',
+    description:
+      'Private online Polish language school by Wiktoria Wilczyńska — free 30-minute trial lesson, multilingual booking flow (EN/RU/UK) and integrated payments.',
+    tags: ['Web Design', 'Multilingual', 'Calendly', 'Booking'],
+  },
+  {
+    title: 'Renueral Psy',
+    url: 'https://renueralpsy.com/',
+    description:
+      'Trauma-focused psychological care practice by Kylie Ringuet — clinically grounded therapy pathways (EMDR, somatic, psychedelic integration) with online booking and telehealth.',
+    tags: ['Web Design', 'Healthcare', 'Booking'],
+  },
+  {
+    title: 'Pools by Jex',
+    url: 'https://poolsbyjex.com/',
+    description:
+      'Owner-operated pool servicing business for the Northern Gold Coast — cleaning, water testing, equipment checks, green pool recovery, repairs, and ongoing care packages.',
+    tags: ['Web Design', 'Local Business', 'Lead Gen'],
   },
   {
     title: 'Commercial Catamaran',
@@ -104,32 +125,11 @@ const liveProjects = [
     tags: ['Web Design', 'Business Site', 'Marine'],
   },
   {
-    title: 'Pools by Jex',
-    url: 'https://poolsbyjex.com/',
+    title: 'Blackjack 3D',
+    url: 'https://blackjack-eight-lyart.vercel.app/',
     description:
-      'Marketing and lead-capture site for a custom pool design and installation business with project gallery and quote requests.',
-    tags: ['Web Design', 'Business Site', 'Lead Gen'],
-  },
-  {
-    title: 'Renueral Psy',
-    url: 'https://renueralpsy.com/',
-    description:
-      'Professional website for a psychology practice — clear service information, practitioner profile, and patient intake flow.',
-    tags: ['Web Design', 'Business Site', 'Healthcare'],
-  },
-  {
-    title: 'Private Polish',
-    url: 'https://privatepolish.com/',
-    description:
-      'Brand and marketing site for a private detailing service — portfolio of work, service breakdown, and booking contact.',
-    tags: ['Web Design', 'Business Site', 'Branding'],
-  },
-  {
-    title: 'Pol Smash',
-    url: 'https://polsmash.vercel.app/',
-    description:
-      'Lightweight interactive web project deployed on Vercel — fast-loading single-page experience built with a modern React stack.',
-    tags: ['React', 'Next.js', 'Vercel'],
+      'Browser-based 3D blackjack game built with Three.js — animated card dealing, full hit / stand / double / split rules, live count tracking, and keyboard shortcuts.',
+    tags: ['Three.js', 'WebGL', '3D', 'Game'],
   },
 ];
 
