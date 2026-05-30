@@ -87,8 +87,8 @@ const liveProjects = [
     url: 'https://hellopolandai.com/',
     image: `${basePath}/images/hellopoland.webp`,
     description:
-      'Multilingual marketing site for an AI-powered Polish immigration assistant covering Karta Pobytu, PESEL and NFZ guidance. Built with Next.js, React, Tailwind CSS and animated dashboard previews.',
-    tags: ['Next.js', 'React', 'Tailwind', 'AI', 'Vercel'],
+      'Multilingual platform for an AI-powered Polish immigration assistant covering Karta Pobytu, PESEL and NFZ guidance. Built with Next.js, React and Tailwind CSS, with the assistant powered by OpenAI GPT-4 and deployed on Vercel.',
+    tags: ['Next.js', 'React', 'Tailwind', 'OpenAI', 'GPT-4', 'Vercel'],
   },
   {
     title: 'Pol Smash',
