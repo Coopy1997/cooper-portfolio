@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,7 +26,7 @@ const links = {
   whatsapp: 'https://wa.me/48664466743',
   github: 'https://github.com/Coopy1997',
   credly: 'https://www.credly.com/users/cooper-timmins/badges',
-  resume: `${basePath}/Cooper_Timmins_Resume_Final.pdf`,
+  resume: `${basePath}/Resume_CooperTimmins.docx`,
 };
 
 const nav = ['About', 'Skills', 'Experience', 'Projects', 'Stack', 'Education', 'Contact'];
@@ -78,6 +78,58 @@ const projects = [
     copy: 'Unity and C# game project demonstrating movement, collision detection, scoring, and gameplay state.',
     tags: ['Unity', 'C#', 'Gameplay Logic'],
     href: 'https://github.com/Coopy1997/fish-game-unity',
+  },
+];
+
+const liveProjects = [
+  {
+    title: 'Hello Poland AI',
+    url: 'https://hellopolandai.com/',
+    description:
+      'AI-powered immigration assistant for international students, workers, and families navigating Polish bureaucracy — Karta Pobytu, PESEL, NFZ, and beyond.',
+    tags: ['AI', 'Next.js', 'Immigration', 'Vercel'],
+  },
+  {
+    title: 'Pol Smash',
+    url: 'https://polsmash.vercel.app/',
+    description:
+      'Home of the Polish Super Smash Bros Ultimate community — ELO and rating system for all players, tournament schedules and results, plus an interactive player map.',
+    tags: ['Community', 'Ratings', 'Esports', 'Next.js', 'Vercel'],
+  },
+  {
+    title: 'Polish With Wilczyńska',
+    url: 'https://privatepolish.com/',
+    description:
+      'Private online Polish language school by Wiktoria Wilczyńska — free 30-minute trial lesson, multilingual booking flow (EN/RU/UK) and integrated payments.',
+    tags: ['Web Design', 'Multilingual', 'Calendly', 'Booking'],
+  },
+  {
+    title: 'Renueral Psy',
+    url: 'https://renueralpsy.com/',
+    description:
+      'Trauma-focused psychological care practice by Kylie Ringuet — clinically grounded therapy pathways (EMDR, somatic, psychedelic integration) with online booking and telehealth.',
+    tags: ['Web Design', 'Healthcare', 'Booking'],
+  },
+  {
+    title: 'Pools by Jex',
+    url: 'https://poolsbyjex.com/',
+    description:
+      'Owner-operated pool servicing business for the Northern Gold Coast — cleaning, water testing, equipment checks, green pool recovery, repairs, and ongoing care packages.',
+    tags: ['Web Design', 'Local Business', 'Lead Gen'],
+  },
+  {
+    title: 'Commercial Catamaran',
+    url: 'https://www.commercialcatamaran.com/',
+    description:
+      'Marketing site for a commercial catamaran business — vessel specs, photography galleries, and direct inquiry contact flow.',
+    tags: ['Web Design', 'Business Site', 'Marine'],
+  },
+  {
+    title: 'Blackjack 3D',
+    url: 'https://blackjack-eight-lyart.vercel.app/',
+    description:
+      'Browser-based 3D blackjack game built with Three.js — animated card dealing, full hit / stand / double / split rules, live count tracking, and keyboard shortcuts.',
+    tags: ['Three.js', 'WebGL', '3D', 'Game'],
   },
 ];
 
@@ -133,6 +185,113 @@ function SectionTitle({ index, title }) {
         {title}
       </h2>
     </motion.div>
+  );
+}
+
+function screenshotUrl(siteUrl) {
+  return `https://image.thum.io/get/width/1280/crop/800/noanimate/${siteUrl}`;
+}
+
+function LiveProjectsCarousel({ items }) {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return undefined;
+    const id = setInterval(() => setIndex((i) => (i + 1) % items.length), 6500);
+    return () => clearInterval(id);
+  }, [paused, items.length]);
+
+  const go = (next) => setIndex((i) => (i + next + items.length) % items.length);
+  const current = items[index];
+
+  return (
+    <div
+      className="noise-panel relative overflow-hidden rounded-lg border border-white/15"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+    >
+      <div className="grid gap-0 md:grid-cols-[1.35fr_1fr]">
+        <div className="relative aspect-[16/10] overflow-hidden bg-[#1a1410]">
+          {items.map((p, i) => (
+            <motion.img
+              key={p.url}
+              src={screenshotUrl(p.url)}
+              alt={`${p.title} screenshot`}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-top"
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: i === index ? 1 : 0, scale: i === index ? 1 : 1.04 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            />
+          ))}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="pointer-events-none absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.18em] text-[#ffb08a] backdrop-blur">
+            {String(index + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
+          </div>
+        </div>
+        <div className="flex flex-col justify-between gap-6 p-6 md:p-8">
+          <div>
+            <div className="font-mono text-xs font-black uppercase tracking-[0.24em] text-[#ffb08a]">Live Site</div>
+            <h3 className="mt-3 text-3xl font-black uppercase leading-[0.95] tracking-[-0.05em] text-[#fff8ee] md:text-4xl">
+              {current.title}
+            </h3>
+            <p className="mt-4 text-[#c9b89f]">{current.description}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {current.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-white/15 px-3 py-1 text-xs font-black uppercase text-[#c9b89f]"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <a
+            className="inline-flex w-fit items-center gap-2 rounded-full bg-[#ff4b13] px-5 py-2 text-sm font-black uppercase text-white transition hover:bg-[#ff5e2c]"
+            href={current.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit Live <ArrowUpRight size={16} />
+          </a>
+        </div>
+      </div>
+      <div className="flex items-center justify-between gap-4 border-t border-white/15 bg-black/40 px-4 py-3">
+        <button
+          type="button"
+          onClick={() => go(-1)}
+          className="rounded-full border border-white/20 px-3 py-1 text-xs font-black uppercase text-[#c9b89f] transition hover:border-[#ff4b13] hover:text-white"
+          aria-label="Previous project"
+        >
+          Prev
+        </button>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {items.map((p, i) => (
+            <button
+              key={p.url}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Show ${p.title}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === index ? 'w-10 bg-[#ff4b13]' : 'w-2 bg-white/30 hover:bg-white/60'
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={() => go(1)}
+          className="rounded-full border border-white/20 px-3 py-1 text-xs font-black uppercase text-[#c9b89f] transition hover:border-[#ff4b13] hover:text-white"
+          aria-label="Next project"
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -462,6 +621,43 @@ export default function ShowcasePortfolio() {
 
       <section id="projects" className="mx-auto max-w-7xl px-4 py-24 md:px-8">
         <SectionTitle index="04 / Projects" title="Projects" />
+
+        <motion.div
+          className="mb-4 flex items-baseline justify-between gap-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={fadeUp}
+        >
+          <h3 className="text-2xl font-black uppercase tracking-[-0.04em] text-[#fff8ee]">Live Sites</h3>
+          <span className="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#ffb08a]">
+            Deployed Work
+          </span>
+        </motion.div>
+
+        <motion.div
+          className="mb-14"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8 }}
+        >
+          <LiveProjectsCarousel items={liveProjects} />
+        </motion.div>
+
+        <motion.div
+          className="mb-4 flex items-baseline justify-between gap-4"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          variants={fadeUp}
+        >
+          <h3 className="text-2xl font-black uppercase tracking-[-0.04em] text-[#fff8ee]">Other Work</h3>
+          <span className="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#ffb08a]">
+            Coursework &amp; Builds
+          </span>
+        </motion.div>
+
         <div className="grid gap-4">
           {projects.map((project, index) => (
             <motion.article
