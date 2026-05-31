@@ -728,8 +728,8 @@ export default function ShowcasePortfolio() {
             <span className="font-mono text-sm font-black text-[#ffb08a]">BSc</span>
             <h3 className="mt-8 text-4xl font-black uppercase tracking-[-0.07em]">BSc Computer Science</h3>
             <p className="mt-5 text-[#c9b89f]">
-              University of Information Technology and Management (WSIiZ). Final semester, graduating in 2026.
-              Completed specialisation in Cloud Technologies and DevOps.
+              University of Information Technology and Management (WSIiZ). Graduated 2026 with a
+              specialisation in Cloud Technologies and DevOps.
             </p>
           </motion.article>
           <motion.article className="gsap-card noise-panel scan-hover rounded-lg p-6" {...fadeInProps(0.12)}>

@@ -11,8 +11,8 @@ export default function Education() {
           <div>
             <h3>BSc Computer Science</h3>
             <p>
-              University of Information Technology and Management (WSIiZ). Final semester, graduating in 2026.
-              Completed specialisation in Cloud Technologies and DevOps.
+              University of Information Technology and Management (WSIiZ). Graduated 2026 with a
+              specialisation in Cloud Technologies and DevOps.
             </p>
           </div>
           <div className="tags">
